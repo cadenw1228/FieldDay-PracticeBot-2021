@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot>
+    <controller type="LOGITECH" port="0" id="DRIVE">
+        <CHASSIS type="DOUBLE_ARCADE" turning_gain="0.2">
+            <axis axis="LEFT_TRIGGER" function="MODE_SLOW"></axis>
+            <axis axis="RIGHT_TRIGGER" function="MODE_FAST"></axis>
+            <axis axis="RIGHT_JOYSTICK_X" function="TURN"></axis>
+            <axis axis="LEFT_JOYSTICK_Y" function="THROTTLE"></axis>
+            <button button="Y" function="CAMERA_AIM"></button>
+        </CHASSIS>
+        <CLIMBER>
+            <button button="B" function="EXTEND"></button>
+            <button button="A" function="RETRACT"></button>
+        </CLIMBER>
+        <INTAKE>
+            <button button="RIGHT_SHOULDER" function="INTAKE_IN"></button>
+            <button button="LEFT_SHOULDER" function="INTAKE_OUT"></button>
+        </INTAKE>
+    </controller>
+    <controller type="LOGITECH" port="1" id="OPERATOR">
+        <SHOOTER>
+            <axis axis="RIGHT_TRIGGER" function="REV_UP"></axis>
+            <button button="A" function="SHOOT"></button>
+            <axis axis="LEFT_JOYSTICK_X" function="TURRET_AIM"></axis>
+        </SHOOTER>
+        <INTAKE>
+            <button button="X" function="INDEX"></button>
+            <button button="A" function="SHOOT"></button>
+            <button button="Y" function="UNJAM"></button>
+            <button button="BACK" function="RAISE"></button>
+        </INTAKE>
+        <PANEL>
+            <button button="B" function="ACTIVATE"></button>
+        </PANEL>
+    </controller>
+</robot>
