@@ -6,7 +6,7 @@ public class Intake implements Subsystem {
     
 
     public void robotInit(){
-        System.out.println("Intake init");
+        System.out.println("Intake maybe");
     }
 
     public void robotPeriodic(){
