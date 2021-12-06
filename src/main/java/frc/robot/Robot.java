@@ -5,9 +5,10 @@ import frc.robot.Framework.Subsystems;
 import frc.robot.Subsystems.*;
 import frc.robot.Framework.IO.In.In;
 import frc.robot.Framework.IO.Out.Out;
+import edu.wpi.first.wpilibj.Joystick;
 
 public class Robot extends TimedRobot {
-
+  
   @Override
   public void robotInit() {
     In.Init("XML/Controls/John.xml");
@@ -16,6 +17,7 @@ public class Robot extends TimedRobot {
     Subsystems.add(new Shooter(), SubsystemID.SHOOTER);
     Subsystems.add(new Arms(), SubsystemID.ARMS);
     Subsystems.add(new Intake(), SubsystemID.INTAKE);
+    Joystick controller;
     //Subsystems.add(new Hopper(), SubsystemID.HOPPER);
     //Subsystems.add(new ColorWheel(), SubsystemID.PANEL);
     
