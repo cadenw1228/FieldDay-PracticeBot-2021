@@ -5,13 +5,16 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.Framework.Subsystem;
+import frc.robot.Framework.IO.In.inTemp;
 
 
 
 public class Intake implements Subsystem {
     
-    TalonSRX m = new TalonSRX(10);
-    Joystick controller = new Joystick(0);
+    TalonSRX top = new TalonSRX(0);
+    TalonSRX bottom = new TalonSRX(4);
+    private inTemp Input = new inTemp();
+    
 
 
 
@@ -35,12 +38,15 @@ public class Intake implements Subsystem {
     }
 
     public void teleopPeriodic(){
-        if(controller.getRawButton(2) == true){
-            m.set(ControlMode.PercentOutput, 1);
-        }else if(controller.getRawButton(3) == true){
-            m.set(ControlMode.PercentOutput, -1); 
+        if(Input.getButton(2) == true){
+            top.set(ControlMode.PercentOutput, 1);
+            bottom.set(ControlMode.PercentOutput, -1);
+        }else if(Input.getButton(3) == true){
+            top.set(ControlMode.PercentOutput, -1); 
+            bottom.set(ControlMode.PercentOutput, 1);
         }else{
-            m.set(ControlMode.PercentOutput, 0);
+            top.set(ControlMode.PercentOutput, 0);
+            bottom.set(ControlMode.PercentOutput, 0);
         }
     }
 }

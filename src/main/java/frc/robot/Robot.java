@@ -18,7 +18,7 @@ public class Robot extends TimedRobot {
     Subsystems.add(new Arms(), SubsystemID.ARMS);
     Subsystems.add(new Intake(), SubsystemID.INTAKE);
     Joystick controller;
-    //Subsystems.add(new Hopper(), SubsystemID.HOPPER);
+    Subsystems.add(new Hopper(), SubsystemID.HOPPER);
     //Subsystems.add(new ColorWheel(), SubsystemID.PANEL);
     
     Subsystems.robotInit();
