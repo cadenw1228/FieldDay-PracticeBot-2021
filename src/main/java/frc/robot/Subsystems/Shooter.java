@@ -31,6 +31,7 @@ public class Shooter implements Subsystem {
         m_motor = new CANSparkMax(deviceID, MotorType.kBrushless);
 
         m_motor.restoreFactoryDefaults();
+
     }
 
     public void robotPeriodic(){
@@ -38,6 +39,7 @@ public class Shooter implements Subsystem {
     }
 
     public void autonomousInit(){
+    
 
     }
     public void autonomousPeriodic(){
@@ -49,6 +51,7 @@ public class Shooter implements Subsystem {
     }
 
     public void teleopPeriodic(){
+
         NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
         NetworkTableEntry tx = table.getEntry("tx");
         NetworkTableEntry ty = table.getEntry("ty");
@@ -88,7 +91,5 @@ public class Shooter implements Subsystem {
                 SmartDashboard.getNumber("Direcetion", 0);
             }
         }
-
-
     }
 }
